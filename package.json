@@ -1,6 +1,6 @@
 {
     "name": "@utils/utils-hooks",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "typings": "dts/index.d.ts",
     "description": "基于React的hooks",
     "main": "lib/index.js",
@@ -13,6 +13,9 @@
         "dts",
         "src"
     ],
+    "publishConfig": {
+        "registry": "http://m.bank-pay.com:8081/repository/npm-my/"
+    },
     "scripts": {
         "build": "cross-env NODE_ENV=production rollup -c && yarn run build:types",
         "build:types": "tsc --emitDeclarationOnly",
