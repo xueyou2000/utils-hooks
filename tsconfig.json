@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "outDir": "lib",
+        "target": "esnext",
+        "module": "esnext",
+        "declaration": true,
+        "skipLibCheck": true,
+        "jsx": "react",
+        "strict": false,
+        "noFallthroughCasesInSwitch": true,
+        "lib": ["dom", "esnext"],
+        "declarationDir": "dts",
+        "moduleResolution": "node",
+        "paths": {
+            "@/*": ["src/*"]
+        },
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true
+    },
+    "include": ["src"]
+}
