@@ -1,6 +1,6 @@
 {
     "name": "@utils/utils-hooks",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "typings": "dts/index.d.ts",
     "description": "基于React的hooks",
     "main": "lib/index.js",
@@ -10,55 +10,48 @@
     "files": [
         "es",
         "lib",
-        "dts",
-        "src"
+        "dts"
     ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xueyou2000/utils-hooks.git"
+    },
     "publishConfig": {
-        "registry": "http://m.bank-pay.com:8081/repository/npm-my/"
+        "registry": "http://192.168.1.22:8081/repository/npm-my/"
     },
     "scripts": {
-        "build": "cross-env NODE_ENV=production rollup -c && yarn run build:types",
-        "build:types": "tsc --emitDeclarationOnly",
+        "type-check": "tsc --noEmit",
         "test": "jest",
+        "bundle": "rollup -c",
+        "build:types": "tsc --emitDeclarationOnly",
         "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
         "_publish": "npm run test && npm run build && npm publish"
     },
     "keywords": [
         "react",
         "react-component",
-        "checkbox"
+        "hooks"
     ],
     "author": {
         "name": "XueYou",
         "email": "xueyoucd@gmail.com"
     },
     "devDependencies": {
-        "@babel/cli": "^7.2.3",
-        "@babel/core": "^7.2.2",
-        "@babel/plugin-proposal-class-properties": "^7.3.0",
-        "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
-        "@babel/preset-env": "^7.3.1",
-        "@babel/preset-react": "^7.0.0",
-        "@babel/preset-typescript": "^7.1.0",
         "@types/jest": "^24.0.6",
         "@types/react": "^16.8.3",
-        "@types/react-dom": "^16.8.1",
-        "babel-loader": "^8.0.5",
         "coveralls": "^3.0.2",
-        "cross-env": "^5.2.0",
-        "fork-ts-checker-webpack-plugin": "^0.5.2",
         "jest": "24.1.0",
         "react": "^16.8.2",
-        "react-dom": "^16.8.2",
         "react-hooks-testing-library": "^0.3.4",
         "react-testing-library": "^6.0.0",
         "rollup": "^1.1.2",
-        "rollup-plugin-babel": "^4.3.2",
         "rollup-plugin-commonjs": "^9.2.0",
         "rollup-plugin-node-resolve": "^4.0.0",
         "rollup-plugin-progress": "^1.0.0",
         "rollup-plugin-replace": "^2.1.0",
+        "rollup-plugin-typescript": "^1.0.0",
         "ts-jest": "^23.10.5",
+        "tslib": "^1.9.3",
         "typescript": "^3.3.3"
     }
 }

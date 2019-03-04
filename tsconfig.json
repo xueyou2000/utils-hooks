@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "baseUrl": "./",
-        "outDir": "lib",
+        "outDir": "dts",
         "target": "esnext",
         "module": "esnext",
         "declaration": true,

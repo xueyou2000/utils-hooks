@@ -1,4 +1,4 @@
-import babel from "rollup-plugin-babel";
+import rollupTypescript from "rollup-plugin-typescript";
 import commonjs from "rollup-plugin-commonjs";
 import resolve from "rollup-plugin-node-resolve";
 import progress from "rollup-plugin-progress";
@@ -34,10 +34,7 @@ export default {
         commonjs({
             include: "node_modules/**"
         }),
-        babel({
-            extensions,
-            include: ["src/**/*"]
-        }),
+        rollupTypescript(),
         progress({ clearLine: true })
     ]
 };
