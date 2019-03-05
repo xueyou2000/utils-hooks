@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "baseUrl": "./",
-        "outDir": "dts",
+        "outDir": "es",
         "target": "esnext",
         "module": "esnext",
         "declaration": true,
@@ -10,7 +10,6 @@
         "strict": false,
         "noFallthroughCasesInSwitch": true,
         "lib": ["dom", "esnext"],
-        "declarationDir": "dts",
         "moduleResolution": "node",
         "paths": {
             "@/*": ["src/*"]
