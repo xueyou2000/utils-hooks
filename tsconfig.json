@@ -5,7 +5,6 @@
         "target": "es6",
         "module": "esnext",
         "declaration": true,
-        "declarationDir": "typings",
         "skipLibCheck": true,
         "jsx": "react",
         "strict": false,

@@ -2,15 +2,14 @@
     "name": "utils-hooks",
     "version": "0.0.31",
     "description": "基于React的hooks",
-    "typings": "typings/index.d.ts",
+    "typings": "es/index.d.ts",
     "main": "dist/index.js",
     "module": "es/index.js",
     "publisher": "XueYou",
     "license": "MIT",
     "files": [
         "es",
-        "dist",
-        "typings"
+        "dist"
     ],
     "repository": {
         "type": "git",
