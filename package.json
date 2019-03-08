@@ -1,15 +1,16 @@
 {
     "name": "utils-hooks",
-    "version": "0.0.3",
+    "version": "0.0.31",
     "description": "基于React的hooks",
-    "typings": "es/index.d.ts",
-    "main": "dist/index.lib.js",
+    "typings": "typings/index.d.ts",
+    "main": "dist/index.js",
     "module": "es/index.js",
     "publisher": "XueYou",
     "license": "MIT",
     "files": [
         "es",
-        "dist"
+        "dist",
+        "typings"
     ],
     "repository": {
         "type": "git",
@@ -21,9 +22,9 @@
     "scripts": {
         "test": "jest",
         "coverage": "jest --coverage",
-        "build": "tsc && yarn run build:es && yarn run build:lib",
-        "build:es": "rollup --config rollup.config.es.js",
-        "build:lib": "rollup --config rollup.config.lib.js",
+        "build": "yarn run build:es && yarn run bundle",
+        "build:es": "tsc",
+        "bundle": "rollup -c",
         "_publish": "yarn run test && yarn run build && npm publish"
     },
     "keywords": [

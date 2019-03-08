@@ -2,14 +2,15 @@
     "compilerOptions": {
         "baseUrl": "./",
         "outDir": "es",
-        "target": "esnext",
+        "target": "es6",
         "module": "esnext",
         "declaration": true,
+        "declarationDir": "typings",
         "skipLibCheck": true,
         "jsx": "react",
         "strict": false,
-        "noFallthroughCasesInSwitch": true,
         "lib": ["dom", "esnext"],
+        "sourceMap": true,
         "moduleResolution": "node",
         "paths": {
             "@/*": ["src/*"]

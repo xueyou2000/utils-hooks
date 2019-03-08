@@ -5,6 +5,7 @@ node_modules/
 /es/
 /lib/
 /dts/
+/typings/
 /coverage/
 /.rpt2_cache/
 npm-debug.log*
