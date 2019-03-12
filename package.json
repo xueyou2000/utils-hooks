@@ -15,9 +15,6 @@
         "type": "git",
         "url": "git+https://github.com/xueyou2000/utils-hooks.git"
     },
-    "publishConfig": {
-        "registry": "http://192.168.1.22:8081/repository/npm-my/"
-    },
     "scripts": {
         "test": "jest",
         "coverage": "jest --coverage",
