@@ -23,18 +23,9 @@ function DefineDefaultValue(props: any, key: string = "value", defaultKey: strin
  * @param defaultKey 默认值键
  */
 function useControll<T>(props: any, key: string = "value", defaultKey: string = "defaultValue", defaultValue?: T): [T, React.Dispatch<React.SetStateAction<T>>, boolean] {
-    const [value, setValue] = useState<T>(DefineDefaultValue(props, key, defaultKey) || defaultValue);
     const isControll = key in props;
-
-    useEffect(() => {
-        if (isControll) {
-            // 受控组件将props.checked作为唯一数据源
-            // 且不应该检查禁用状态
-            setValue(props[key]);
-        }
-    });
-
-    return [value, setValue, isControll];
+    const [value, setValue] = useState<T>(DefineDefaultValue(props, key, defaultKey) || defaultValue);
+    return [isControll ? props[key] : value, setValue, isControll];
 }
 
 export default useControll;
