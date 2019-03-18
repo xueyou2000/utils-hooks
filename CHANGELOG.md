@@ -4,6 +4,7 @@
 
 -   增加`useContainer`
 -   增加`usePortal`
+-   增加`useTranstion`
 
 ## 0.0.32 (Sun Mar 17 2019)
 

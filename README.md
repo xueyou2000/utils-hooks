@@ -55,10 +55,29 @@ const container = useContainer();
 
 ```tsx
 function Model() {
-    return usePortal(
+    const renderPortal = usePortal();
+
+    return renderPortal(
         <div>
             <h1>我是弹出框</h1>
         </div>
     );
+}
+```
+
+## useTranstion
+
+监听过度动画状态.
+
+```tsx
+import useTranstion, { UNMOUNTED, ENTERING, ENTERED, EXITING, EXITED } from "utils-hooks/es/useTranstion";
+
+function App() {
+    // 是否可见, 切换此状态来改变是否 state
+    const [visible] = useState(false);
+    const [ref, state] = useTranstion(visible);
+    // 默认状态 state == UNMOUNTED
+
+    return <div ref={ref}>有过度css的元素</div>
 }
 ```
