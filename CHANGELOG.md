@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.34 (Mon Mar 18 2019)
+
+-   更改导出方式
+
 ## 0.0.33 (Mon Mar 18 2019)
 
 -   增加`useContainer`
