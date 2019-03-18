@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.37 (Mon Mar 18 2019)
+
+-   `useTranstion` 增加`initTranstion`可选参数
+-   `useTranstion`初始化第一次渲染逻辑修复
+
 ## 0.0.34 (Mon Mar 18 2019)
 
 -   导出所有内容
