@@ -4,7 +4,7 @@ import useContainer  from "./useContainer";
 import usePortal  from "./usePortal";
 import useTranstion, { UNMOUNTED, EXITED, ENTERING, ENTERED, EXITING }  from "./useTranstion";
 
-export default {
+export {
     useMedia,
     useControll,
     useContainer,
