@@ -38,3 +38,27 @@ function Checkbox(props) {
 // 不匹配媒体查询则使用默认值 count === 2
 const count = useMedia(["(min-width: 1500px)", "(min-width: 1000px)", "(min-width: 600px)"], [5, 4, 3], 2);
 ```
+
+## useContainer
+
+封装获取dom元素方法, 如果提供参数, 则默认再body内创建一个div作为容器.
+
+> 一般用于弹出组件
+
+```tsx
+const container = useContainer();
+```
+
+## usePortal
+
+封装`useContainer`, 并使用`ReactDOM.createPortal`渲染弹出内容
+
+```tsx
+function Model() {
+    return usePortal(
+        <div>
+            <h1>我是弹出框</h1>
+        </div>
+    );
+}
+```

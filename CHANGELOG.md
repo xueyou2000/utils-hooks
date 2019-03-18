@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.33 (Mon Mar 18 2019)
+
+-   增加`useContainer`
+-   增加`usePortal`
+
 ## 0.0.32 (Sun Mar 17 2019)
 
 -   极大优化 useControll 性能
