@@ -13,7 +13,7 @@ export const EXITING = "exiting";
  * @example const [ref, state] = useTranstion(visible);
  */
 function useTranstion(visible: boolean, initTranstion: boolean  = false): [React.MutableRefObject<undefined>, string] {
-    const [state, setState] = useState<string>(initTranstion ? (visible ? ENTERED : EXITED) : UNMOUNTED);
+    const [state, setState] = useState<string>(initTranstion ? UNMOUNTED : (visible ? ENTERED : EXITED));
     const init = useRef(false);
     const ref = useRef();
 
@@ -33,8 +33,13 @@ function useTranstion(visible: boolean, initTranstion: boolean  = false): [React
 
     useEffect(() => {
         const element = ref.current as HTMLElement;
+        if (!element) { return; }
 
-        if (!element || init.current === false) {
+        /**
+         * 第一次立即设置完毕状态, 而不等待过度动画完毕, 因为这个时候没有过度
+         */
+        if (init.current === false) {
+            if (initTranstion) { visible ? setState(ENTERED) : setState(EXITED); }
             init.current = true;
             return;
         }

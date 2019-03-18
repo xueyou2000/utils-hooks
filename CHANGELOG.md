@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.38 (Mon Mar 18 2019)
+
+-   修复`useTranstion`是否初次过度动画实现
+
 ## 0.0.37 (Mon Mar 18 2019)
 
 -   `useTranstion` 增加`initTranstion`可选参数
