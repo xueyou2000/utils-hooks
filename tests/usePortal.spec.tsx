@@ -9,7 +9,7 @@ describe('usePortal', () => {
     test('Should Render', () => {
         const container = document.createElement('div');
         const { result } = renderHook(() => usePortal(container));
-        const renderPortal = result.current;
+        const [renderPortal] = result.current;
         const { getByText, debug } = render(renderPortal(<p>hello</p>), { container })
 
         expect(getByText('hello')).toBeDefined();
