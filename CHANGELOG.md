@@ -1,8 +1,12 @@
 # Change Log
 
+## 0.0.41 (Mon Mar 18 2019)
+
+-   增加`useObserver`, 由于使用到了`IntersectionObserver`, 再正式项目中需要使用[polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill)
+
 ## 0.0.40 (Mon Mar 18 2019)
 
--   修复IE下不支持`append`API
+-   修复 IE 下不支持`append`API
 
 ## 0.0.39 (Mon Mar 18 2019)
 
