@@ -25,7 +25,7 @@ export function useContainer(getContainer?: GetContainer) {
         // 未提供 container 则在Body下创建div作为容器
         if (!containerRef.current) {
             container = document.createElement("div");
-            document.body.append(container);
+            document.body.appendChild(container);
             containerRef.current = container;
         } else {
             return containerRef.current;
