@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.40 (Mon Mar 18 2019)
+
+-   修复IE下不支持`append`API
+
 ## 0.0.39 (Mon Mar 18 2019)
 
 -   更改输出目标`esnext`为`es5`
