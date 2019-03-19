@@ -1,11 +1,11 @@
 import ReactDOM from "react-dom";
-import useContainer, { GetContainer } from "./useContainer";
+import { useContainer, GetContainer } from "./useContainer";
 
 /**
  * 使用Portal, 弹出内容
  * @param getContainer 
  */
-function usePortal(getContainer?: GetContainer): [(node: React.ReactNode) => React.ReactPortal, HTMLElement] {
+export function usePortal(getContainer?: GetContainer): [(node: React.ReactNode) => React.ReactPortal, HTMLElement] {
     const container = useContainer(getContainer);
 
     function renderPortal(node: React.ReactNode) {
@@ -15,5 +15,3 @@ function usePortal(getContainer?: GetContainer): [(node: React.ReactNode) => Rea
 
     return [renderPortal, container];
 }
-
-export default usePortal;

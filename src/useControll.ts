@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 /**
  * 获取默认值
@@ -22,10 +22,8 @@ function DefineDefaultValue(props: any, key: string = "value", defaultKey: strin
  * @param key 值键
  * @param defaultKey 默认值键
  */
-function useControll<T>(props: any, key: string = "value", defaultKey: string = "defaultValue", defaultValue?: T): [T, React.Dispatch<React.SetStateAction<T>>, boolean] {
+export function useControll<T>(props: any, key: string = "value", defaultKey: string = "defaultValue", defaultValue?: T): [T, React.Dispatch<React.SetStateAction<T>>, boolean] {
     const isControll = key in props;
     const [value, setValue] = useState<T>(DefineDefaultValue(props, key, defaultKey) || defaultValue);
     return [isControll ? props[key] : value, setValue, isControll];
 }
-
-export default useControll;

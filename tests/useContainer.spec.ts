@@ -1,5 +1,5 @@
 import { cleanup, renderHook } from "react-hooks-testing-library";
-import useContainer from "../src/useContainer";
+import { useContainer } from "../src";
 
 describe('useContainer', () => {
     afterEach(cleanup);

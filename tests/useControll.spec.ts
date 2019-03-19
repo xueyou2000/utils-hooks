@@ -1,5 +1,5 @@
 import { cleanup, renderHook, act } from "react-hooks-testing-library";
-import useControll from "../src/useControll";
+import { useControll } from "../src";
 
 describe("useControll", () => {
     afterEach(cleanup);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { cleanup, renderHook } from "react-hooks-testing-library";
 import { render } from 'react-testing-library'
-import usePortal from "../src/usePortal";
+import { usePortal } from "../src";
 
 describe('usePortal', () => {
     afterEach(cleanup);

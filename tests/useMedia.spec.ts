@@ -1,5 +1,5 @@
 import { cleanup, renderHook } from "react-hooks-testing-library";
-import useMedia from "../src/useMedia";
+import { useMedia } from "../src";
 
 describe("useMedia", () => {
     afterEach(cleanup);

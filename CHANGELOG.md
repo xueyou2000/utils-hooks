@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.39 (Mon Mar 18 2019)
+
+-   更改输出目标`esnext`为`es5`
+-   默认使用`es`模块
+
 ## 0.0.38 (Mon Mar 18 2019)
 
 -   修复`useTranstion`是否初次过度动画实现

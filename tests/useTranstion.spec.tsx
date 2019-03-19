@@ -1,7 +1,7 @@
 import React from 'react';
 import { cleanup, renderHook } from "react-hooks-testing-library";
 import { render, fireEvent } from 'react-testing-library'
-import useTranstion, { UNMOUNTED, ENTERING, ENTERED, EXITING, EXITED } from "../src/useTranstion";
+import { useTranstion, UNMOUNTED, ENTERING, ENTERED, EXITING, EXITED } from "../src";
 
 
 describe('useTranstion', () => {

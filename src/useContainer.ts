@@ -8,7 +8,7 @@ export type GetContainer = GetDrawerContainerFuc | HTMLElement;
  * @param getContainer 
  * @example const container = useContainer(() => some_container);
  */
-function useContainer(getContainer?: GetContainer) {
+export function useContainer(getContainer?: GetContainer) {
     const containerRef = useRef<HTMLElement>(null);
 
     // 在组件装卸时, 清除再body内创建的 container
@@ -38,5 +38,3 @@ function useContainer(getContainer?: GetContainer) {
 
     return container;
 }
-
-export default useContainer;

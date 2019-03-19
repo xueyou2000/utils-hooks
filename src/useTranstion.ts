@@ -12,7 +12,7 @@ export const EXITING = "exiting";
  * @param initTranstion   是否初始动画, 默认false[可选]
  * @example const [ref, state] = useTranstion(visible);
  */
-function useTranstion(visible: boolean, initTranstion: boolean  = false): [React.MutableRefObject<undefined>, string] {
+export function useTranstion(visible: boolean, initTranstion: boolean  = false): [React.MutableRefObject<undefined>, string] {
     const [state, setState] = useState<string>(initTranstion ? UNMOUNTED : (visible ? ENTERED : EXITED));
     const init = useRef(false);
     const ref = useRef();
@@ -67,5 +67,3 @@ function useTranstion(visible: boolean, initTranstion: boolean  = false): [React
 
     return [ref, state];
 }
-
-export default useTranstion;

@@ -1,9 +1,9 @@
 {
     "name": "utils-hooks",
-    "version": "0.0.38",
+    "version": "0.0.39",
     "description": "基于React的hooks",
     "typings": "es/index.d.ts",
-    "main": "dist/index.js",
+    "main": "es/index.js",
     "module": "es/index.js",
     "publisher": "XueYou",
     "license": "MIT",
