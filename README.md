@@ -41,7 +41,7 @@ const count = useMedia(["(min-width: 1500px)", "(min-width: 1000px)", "(min-widt
 
 ## useContainer
 
-封装获取dom元素方法, 如果提供参数, 则默认再body内创建一个div作为容器.
+封装获取 dom 元素方法, 如果提供参数, 则默认再 body 内创建一个 div 作为容器.
 
 > 一般用于弹出组件
 
@@ -78,6 +78,16 @@ function App() {
     const [ref, state] = useTranstion(visible);
     // 默认状态 state == UNMOUNTED
 
-    return <div ref={ref}>有过度css的元素</div>
+    return <div ref={ref}>有过度css的元素</div>;
 }
+```
+
+## useObserverScroll
+
+监听元素滚动事件, 封装了滚动方向
+
+```tsx
+useObserverScroll((event, down) => {
+    console.log(`向${down ? "下" : "上"}滚动了`);
+}, []);
 ```

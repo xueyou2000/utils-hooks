@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.0.42 (Wed Mar 20 2019)
+
+-   增加`useObserverScroll`
+-   增加`useMount`
+-   增加`useUnmount`
+
 ## 0.0.41 (Mon Mar 18 2019)
 
 -   增加`useObserver`, 由于使用到了`IntersectionObserver`, 再正式项目中需要使用[polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill)
