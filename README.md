@@ -89,5 +89,5 @@ function App() {
 ```tsx
 useObserverScroll((event, down) => {
     console.log(`向${down ? "下" : "上"}滚动了`);
-}, []);
+});
 ```

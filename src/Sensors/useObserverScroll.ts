@@ -7,18 +7,19 @@ import { useEffect, useRef } from "react";
  * @param deps
  * @param target
  */
-export function useObserverScroll(callback: (event: UIEvent, down: boolean) => void, deps?: any[], target: HTMLElement) {
+export function useObserverScroll(callback: (event: UIEvent, down: boolean) => void, target?: HTMLElement, deps?: any[]) {
     const lastScroll = useRef(window.pageYOffset);
     useEffect(() => {
         function handleScroll(event: UIEvent) {
             callback(event, !(lastScroll.current > window.pageYOffset));
             lastScroll.current = window.pageYOffset;
         }
-        if (target) {
-            target.addEventListener("scroll", handleScroll);
+        const t = target || window;
+        if (t) {
+            t.addEventListener("scroll", handleScroll);
         }
         return () => {
-            target.removeEventListener("scroll", handleScroll);
+            t.removeEventListener("scroll", handleScroll);
         };
     }, deps);
 }
