@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.43 (Thu Mar 21 2019)
+
+-   增加`useGlobalState`
+
 ## 0.0.42 (Wed Mar 20 2019)
 
 -   增加`useObserverScroll`

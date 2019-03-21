@@ -91,3 +91,24 @@ useObserverScroll((event, down) => {
     console.log(`向${down ? "下" : "上"}滚动了`);
 });
 ```
+
+## useGlobalState
+
+监听全局数据
+
+```tsx
+import { MonitorState, MonitorStateTest } from "utils-hooks";
+const countStore = new MonitorState(0);
+
+export function MonitorStateTest() {
+    const [count, setCount] = useGlobalState<number>(countStore);
+
+    return (
+        <div>
+            当前count: {count}
+            <button onClick={() => setCount(count + 1)}>增加</button>
+            <button onClick={() => setCount(count - 1)}>减少</button>
+        </div>
+    );
+}
+```
