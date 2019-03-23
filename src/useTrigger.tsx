@@ -68,6 +68,8 @@ export function useTrigger(ref: React.MutableRefObject<any>, action: TriggerActi
             }
         };
     }, [ref.current]);
+
+    return (visible: boolean) => (prevState.current = visible);
 }
 
 /**

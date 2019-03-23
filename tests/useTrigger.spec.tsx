@@ -103,4 +103,24 @@ describe("useTrigger", () => {
         fireEvent.click(div);
         expect(state).toBeFalsy();
     });
+
+    test("outside change state", () => {
+        var state = false;
+        const hookresult = renderHook(() => useRef());
+        const fn = jest.fn((act, actived: boolean) => {
+            state = actived;
+        });
+        const { rerender, result } = renderHook(() => useTrigger(hookresult.result.current, ["click"], ["click"], fn));
+
+        const warpper = render(<div data-testid="div" ref={hookresult.result.current} />);
+        const div = warpper.getByTestId("div");
+        rerender();
+        fireEvent.click(div);
+        expect(fn).toBeCalled();
+
+        result.current(false);
+
+        fireEvent.click(div);
+        expect(state).toBeTruthy();
+    });
 });

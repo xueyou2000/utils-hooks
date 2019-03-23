@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.50 (Sat Mar 23 2019)
+
+-   `useTrigger`, `useTriggerChain` 返回一个更改函数, 去更改内部状态
+
 ## 0.0.49 (Sat Mar 23 2019)
 
 -   `useTrigger`导出

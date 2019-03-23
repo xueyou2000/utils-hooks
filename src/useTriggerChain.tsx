@@ -17,7 +17,7 @@ export function useTriggerChain(triggerRef: React.MutableRefObject<HTMLElement>,
     const hideActived = useRef(false);
     const timeHandle = useRef(null);
 
-    useTrigger(triggerRef, config.trigger, config.trigger, (act, actived, event) => {
+    const setActived = useTrigger(triggerRef, config.trigger, config.trigger, (act, actived, event) => {
         triggerActived.current = actived;
         if (actived) {
             // 触发显示 逻辑
@@ -49,4 +49,6 @@ export function useTriggerChain(triggerRef: React.MutableRefObject<HTMLElement>,
             }
         }
     });
+
+    return setActived;
 }
