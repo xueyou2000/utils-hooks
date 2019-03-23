@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.47 (Sat Mar 23 2019)
+
+-   再次更新`useTrigger`函数签名, 将 ref 通过参数传入
+
 ## 0.0.46 (Sat Mar 23 2019)
 
 -   更新`useTrigger`函数签名

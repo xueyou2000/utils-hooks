@@ -10,8 +10,7 @@ const ActionMap = {
     contextMenu: listenContextMenu
 };
 
-export function useTrigger(action: TriggerAction[], cancel: TriggerAction[], cb: (act: TriggerAction, actived: boolean, event?: MouseEvent) => void) {
-    const ref = useRef();
+export function useTrigger(ref: React.MutableRefObject<any>, action: TriggerAction[], cancel: TriggerAction[], cb: (act: TriggerAction, actived: boolean, event?: MouseEvent) => void) {
     const prevState = useRef(false);
 
     /**
@@ -69,6 +68,4 @@ export function useTrigger(action: TriggerAction[], cancel: TriggerAction[], cb:
             }
         };
     }, [ref.current]);
-
-    return ref;
 }

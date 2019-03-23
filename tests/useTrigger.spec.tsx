@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { renderHook } from "react-hooks-testing-library";
 import { fireEvent, render } from "react-testing-library";
 import { useTrigger } from "../src";
@@ -6,10 +6,11 @@ import { useTrigger } from "../src";
 describe("useTrigger", () => {
     test("hover trigger", () => {
         var state = false;
+        const { result } = renderHook(() => useRef());
         const fn = jest.fn((act, actived: boolean) => {
             state = actived;
         });
-        const { result, rerender } = renderHook(() => useTrigger(["hover"], ["hover"], fn));
+        const { rerender } = renderHook(() => useTrigger(result.current, ["hover"], ["hover"], fn));
 
         const warpper = render(<div data-testid="div" ref={result.current} />);
         const div = warpper.getByTestId("div");
@@ -46,11 +47,11 @@ describe("useTrigger", () => {
 
     test("click trigger", () => {
         var state = false;
+        const { result } = renderHook(() => useRef());
         const fn = jest.fn((act, actived: boolean) => {
             state = actived;
-            console.log("设置state", actived);
         });
-        const { result, rerender } = renderHook(() => useTrigger(["click"], ["click"], fn));
+        const { rerender } = renderHook(() => useTrigger(result.current, ["click"], ["click"], fn));
 
         const warpper = render(<div data-testid="div" ref={result.current} />);
         const div = warpper.getByTestId("div");
@@ -67,10 +68,11 @@ describe("useTrigger", () => {
 
     test("focus trigger", () => {
         var state = false;
+        const { result } = renderHook(() => useRef());
         const fn = jest.fn((act, actived: boolean) => {
             state = actived;
         });
-        const { result, rerender } = renderHook(() => useTrigger(["focus"], ["focus"], fn));
+        const { rerender } = renderHook(() => useTrigger(result.current, ["focus"], ["focus"], fn));
 
         const warpper = render(<div data-testid="div" ref={result.current} />);
         const div = warpper.getByTestId("div");
@@ -87,10 +89,11 @@ describe("useTrigger", () => {
 
     test("contextMenu trigger", () => {
         var state = false;
+        const { result } = renderHook(() => useRef());
         const fn = jest.fn((act, actived: boolean) => {
             state = actived;
         });
-        const { result, rerender } = renderHook(() => useTrigger(["contextMenu"], ["click"], fn));
+        const { rerender } = renderHook(() => useTrigger(result.current, ["contextMenu"], ["click"], fn));
 
         const warpper = render(<div data-testid="div" ref={result.current} />);
         const div = warpper.getByTestId("div");
