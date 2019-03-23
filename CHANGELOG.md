@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.49 (Sat Mar 23 2019)
+
+-   `useTrigger`导出
+-   修复`useOutsideClick`再元素为空时候的异常
+
 ## 0.0.48 (Sat Mar 23 2019)
 
 -   增加`TriggerWrap`
