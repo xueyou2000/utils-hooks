@@ -10,7 +10,7 @@ const ActionMap = {
     contextMenu: listenContextMenu
 };
 
-export function useTrigger(action: TriggerAction[], cancel: TriggerAction[], cb: (actived: boolean, event?: MouseEvent) => void) {
+export function useTrigger(action: TriggerAction[], cancel: TriggerAction[], cb: (act: TriggerAction, actived: boolean, event?: MouseEvent) => void) {
     const ref = useRef();
     const prevState = useRef(false);
 
@@ -48,7 +48,7 @@ export function useTrigger(action: TriggerAction[], cancel: TriggerAction[], cb:
         const listenMap = listenTrigger(element, action, (act, actived, event) => {
             if (actived || canbeCancel(act)) {
                 prevState.current = actived;
-                cb(actived, event);
+                cb(act, actived, event);
             }
         });
 
@@ -57,7 +57,7 @@ export function useTrigger(action: TriggerAction[], cancel: TriggerAction[], cb:
             cancel,
             (act, actived, event) => {
                 prevState.current = false;
-                cb(false, event);
+                cb(act, false, event);
             },
             listenMap
         );

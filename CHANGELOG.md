@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.46 (Sat Mar 23 2019)
+
+-   更新`useTrigger`函数签名
+
 ## 0.0.45 (Sat Mar 23 2019)
 
 -   增加`useOutsideClick`

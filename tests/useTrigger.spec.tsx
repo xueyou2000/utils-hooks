@@ -6,7 +6,7 @@ import { useTrigger } from "../src";
 describe("useTrigger", () => {
     test("hover trigger", () => {
         var state = false;
-        const fn = jest.fn((actived: boolean) => {
+        const fn = jest.fn((act, actived: boolean) => {
             state = actived;
         });
         const { result, rerender } = renderHook(() => useTrigger(["hover"], ["hover"], fn));
@@ -46,7 +46,7 @@ describe("useTrigger", () => {
 
     test("click trigger", () => {
         var state = false;
-        const fn = jest.fn((actived: boolean) => {
+        const fn = jest.fn((act, actived: boolean) => {
             state = actived;
             console.log("设置state", actived);
         });
@@ -67,7 +67,7 @@ describe("useTrigger", () => {
 
     test("focus trigger", () => {
         var state = false;
-        const fn = jest.fn((actived: boolean) => {
+        const fn = jest.fn((act, actived: boolean) => {
             state = actived;
         });
         const { result, rerender } = renderHook(() => useTrigger(["focus"], ["focus"], fn));
@@ -87,7 +87,7 @@ describe("useTrigger", () => {
 
     test("contextMenu trigger", () => {
         var state = false;
-        const fn = jest.fn((actived: boolean) => {
+        const fn = jest.fn((act, actived: boolean) => {
             state = actived;
         });
         const { result, rerender } = renderHook(() => useTrigger(["contextMenu"], ["click"], fn));
