@@ -1,4 +1,4 @@
-import { useMount } from "./Lifecycles/useMount";
+import { useEffect } from "react";
 
 /**
  * 监听是否空白处点击
@@ -6,7 +6,7 @@ import { useMount } from "./Lifecycles/useMount";
  * @param cb
  */
 export function useOutsideClick(elements: HTMLElement[], cb: Function) {
-    useMount(() => {
+    useEffect(() => {
         const outsideClickHandle = (event: MouseEvent) => {
             if (!elements.some((ele) => ele.contains(event.target as HTMLElement))) {
                 cb();
@@ -16,5 +16,5 @@ export function useOutsideClick(elements: HTMLElement[], cb: Function) {
         document.addEventListener("click", outsideClickHandle, true);
 
         return () => document.removeEventListener("click", outsideClickHandle, true);
-    });
+    }, elements);
 }

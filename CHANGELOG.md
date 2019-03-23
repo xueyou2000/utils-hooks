@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.48 (Sat Mar 23 2019)
+
+-   增加`TriggerWrap`
+-   增加`useTrigger`
+
 ## 0.0.47 (Sat Mar 23 2019)
 
 -   再次更新`useTrigger`函数签名, 将 ref 通过参数传入

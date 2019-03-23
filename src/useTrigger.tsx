@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { listenClick, listenContextMenu, listenFocus, listenHover } from "utils-dom";
 
 export type TriggerAction = "hover" | "click" | "focus" | "contextMenu";
@@ -68,4 +68,20 @@ export function useTrigger(ref: React.MutableRefObject<any>, action: TriggerActi
             }
         };
     }, [ref.current]);
+}
+
+/**
+ * 触发包裹组件
+ * @description 如果element是原生组件, 则直接返回, 否则包裹一层div去监听事件
+ * @param element
+ */
+export function TriggerWrap(element: React.ReactNode, ref: React.MutableRefObject<any>) {
+    const node = React.Children.only(element) as any;
+
+    // node.type 是字符串, 则认为原生标签, 如果是构造函数, 则认定是自定义组件
+    if (typeof node.type === "string") {
+        return React.cloneElement(node, { ref });
+    } else {
+        return <div ref={ref}>{element}</div>;
+    }
 }
