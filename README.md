@@ -112,3 +112,28 @@ export function MonitorStateTest() {
     );
 }
 ```
+
+## useOutsideClick
+
+监听空白处点击
+
+```tsx
+var div = document.getById("abc");
+useOutsideClick([div], () => {
+    console.log("点击到空白处了");
+});
+```
+
+## useTrigger
+
+监听触发器
+
+```tsx
+function app() {
+    const ref = useTrigger(["click"], ["click"], (actived) => {
+        console.log(actived ? "激活了" : "取消激活");
+    });
+
+    return <div ref={ref} />;
+}
+```

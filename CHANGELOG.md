@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.45 (Sat Mar 23 2019)
+
+-   增加`useOutsideClick`
+-   增加`useTrigger`
+
 ## 0.0.43 (Thu Mar 21 2019)
 
 -   增加`useGlobalState`

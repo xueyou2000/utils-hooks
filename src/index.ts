@@ -8,3 +8,5 @@ export * from "./Lifecycles/useMount";
 export * from "./Lifecycles/useUnmount";
 export * from "./Sensors/useObserverScroll";
 export * from "./State/useGlobalState";
+export * from "./useOutsideClick";
+export * from "./useTrigger";
