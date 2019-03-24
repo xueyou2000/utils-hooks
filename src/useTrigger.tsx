@@ -10,7 +10,7 @@ const ActionMap = {
     contextMenu: listenContextMenu
 };
 
-export function useTrigger(ref: React.MutableRefObject<any>, action: TriggerAction[], cancel: TriggerAction[], cb: (act: TriggerAction, actived: boolean, event?: MouseEvent) => void) {
+export function useTrigger(ref: React.MutableRefObject<any>, action: TriggerAction[], cancel: TriggerAction[], cb: (act: TriggerAction, actived: boolean, event?: MouseEvent) => void, deps: any[] = []) {
     const prevState = useRef(false);
 
     /**
@@ -18,9 +18,9 @@ export function useTrigger(ref: React.MutableRefObject<any>, action: TriggerActi
      * @param act
      */
     function canbeCancel(act: TriggerAction) {
-        // if (act === "contextMenu") {
-        //     return cancel.some((x) => x === "click");
-        // }
+        if (act === "contextMenu") {
+            return cancel.some((x) => x === "click");
+        }
         return cancel.some((x) => x === act);
     }
 
@@ -67,7 +67,7 @@ export function useTrigger(ref: React.MutableRefObject<any>, action: TriggerActi
                 listenMap[key]();
             }
         };
-    }, [ref.current]);
+    }, [ref.current, ...deps]);
 
     return (visible: boolean) => (prevState.current = visible);
 }

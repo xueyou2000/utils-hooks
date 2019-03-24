@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.51 (Sun Mar 24 2019)
+
+-   `useTriggerChain`增加 deeps 依赖数组
+
 ## 0.0.50 (Sat Mar 23 2019)
 
 -   `useTrigger`, `useTriggerChain` 返回一个更改函数, 去更改内部状态
