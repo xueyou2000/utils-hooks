@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.52 (Tue Mar 26 2019)
+
+-   修复`useOutsideClick`的判断逻辑
+
 ## 0.0.51 (Sun Mar 24 2019)
 
 -   `useTriggerChain`增加 deeps 依赖数组

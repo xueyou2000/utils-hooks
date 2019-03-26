@@ -8,7 +8,7 @@ import { useEffect } from "react";
 export function useOutsideClick(elements: HTMLElement[], cb: Function, deps: any[] = []) {
     useEffect(() => {
         const outsideClickHandle = (event: MouseEvent) => {
-            if (!elements.some((ele) => ele && ele.contains(event.target as HTMLElement))) {
+            if (!elements.some((ele) => ele && (ele === event.target || ele.contains(event.target as HTMLElement)))) {
                 cb(event);
             }
         };
