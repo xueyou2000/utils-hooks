@@ -55,6 +55,6 @@
         "typescript": "^3.3.3"
     },
     "dependencies": {
-        "utils-dom": "0.0.46"
+        "utils-dom": "^0.0.51"
     }
 }
