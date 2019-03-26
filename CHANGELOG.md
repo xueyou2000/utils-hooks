@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.53 (Tue Mar 26 2019)
+
+-   增加 ref 参数的版本
+
 ## 0.0.52 (Tue Mar 26 2019)
 
 -   修复`useOutsideClick`的判断逻辑

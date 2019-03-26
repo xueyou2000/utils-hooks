@@ -41,3 +41,38 @@ export function useObserver(justFirst = false): [React.MutableRefObject<undefine
 
     return [ref, visible];
 }
+
+export function useObserverWithRef(ref: React.MutableRefObject<any>, justFirst = false): boolean {
+    const loadRef = useRef(false);
+    // 元素当前是否可见
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        const element = ref.current as HTMLElement;
+        if (!element) {
+            return;
+        }
+        const intersectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach((info) => {
+                const _visible = info.intersectionRatio > 0;
+
+                if (justFirst) {
+                    if (_visible && !loadRef.current) {
+                        loadRef.current = true;
+                        setVisible(_visible);
+                        intersectionObserver.disconnect();
+                    }
+                } else {
+                    setVisible(_visible);
+                }
+            });
+        });
+
+        intersectionObserver.observe(element);
+        return () => {
+            intersectionObserver.unobserve(element);
+        };
+    }, [ref.current]);
+
+    return visible;
+}

@@ -12,8 +12,8 @@ export const EXITING = "exiting";
  * @param initTranstion   是否初始动画, 默认false[可选]
  * @example const [ref, state] = useTranstion(visible);
  */
-export function useTranstion(visible: boolean, initTranstion: boolean  = false): [React.MutableRefObject<undefined>, string] {
-    const [state, setState] = useState<string>(initTranstion ? UNMOUNTED : (visible ? ENTERED : EXITED));
+export function useTranstion(visible: boolean, initTranstion: boolean = false): [React.MutableRefObject<undefined>, string] {
+    const [state, setState] = useState<string>(initTranstion ? UNMOUNTED : visible ? ENTERED : EXITED);
     const init = useRef(false);
     const ref = useRef();
 
@@ -33,13 +33,17 @@ export function useTranstion(visible: boolean, initTranstion: boolean  = false):
 
     useEffect(() => {
         const element = ref.current as HTMLElement;
-        if (!element) { return; }
+        if (!element) {
+            return;
+        }
 
         /**
          * 第一次立即设置完毕状态, 而不等待过度动画完毕, 因为这个时候没有过度
          */
         if (init.current === false) {
-            if (initTranstion) { visible ? setState(ENTERED) : setState(EXITED); }
+            if (initTranstion) {
+                visible ? setState(ENTERED) : setState(EXITED);
+            }
             init.current = true;
             return;
         }
@@ -66,4 +70,63 @@ export function useTranstion(visible: boolean, initTranstion: boolean  = false):
     }, [visible]);
 
     return [ref, state];
+}
+
+export function useTranstionWithRef(ref: React.MutableRefObject<any>, visible: boolean, initTranstion: boolean = false): string {
+    const [state, setState] = useState<string>(initTranstion ? UNMOUNTED : visible ? ENTERED : EXITED);
+    const init = useRef(false);
+
+    const handleTransitionEnter = useCallback((e: TransitionEvent) => {
+        const element = ref.current as HTMLElement;
+        if (e.target === element) {
+            setState(ENTERED);
+        }
+    }, []);
+
+    const handleTransitionLeave = useCallback((e: TransitionEvent) => {
+        const element = ref.current as HTMLElement;
+        if (e.target === element) {
+            setState(EXITED);
+        }
+    }, []);
+
+    useEffect(() => {
+        const element = ref.current as HTMLElement;
+        if (!element) {
+            return;
+        }
+
+        /**
+         * 第一次立即设置完毕状态, 而不等待过度动画完毕, 因为这个时候没有过度
+         */
+        if (init.current === false) {
+            if (initTranstion) {
+                visible ? setState(ENTERED) : setState(EXITED);
+            }
+            init.current = true;
+            return;
+        }
+
+        if (visible) {
+            // 重置离开的样式和事件
+            element.removeEventListener("transitionend", handleTransitionLeave);
+            element.removeEventListener("animationend", handleTransitionLeave);
+
+            // 1. 监听过度完毕事件
+            element.addEventListener("transitionend", handleTransitionEnter);
+            element.addEventListener("animationend", handleTransitionEnter);
+
+            setState(ENTERING);
+        } else {
+            element.removeEventListener("transitionend", handleTransitionEnter);
+            element.removeEventListener("animationend", handleTransitionEnter);
+
+            element.addEventListener("transitionend", handleTransitionLeave);
+            element.addEventListener("animationend", handleTransitionLeave);
+
+            setState(EXITING);
+        }
+    }, [visible]);
+
+    return state;
 }
