@@ -14,5 +14,5 @@ export function useOutsideClick(elements: HTMLElement[], cb: Function, deps: any
         };
         document.addEventListener("click", outsideClickHandle, true);
         return () => document.removeEventListener("click", outsideClickHandle, true);
-    }, [...deps]);
+    }, [...elements, ...deps]);
 }
