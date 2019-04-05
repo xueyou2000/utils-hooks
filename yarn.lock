@@ -4551,11 +4551,6 @@ util.promisify@^1.0.0:
     define-properties "^1.1.2"
     object.getownpropertydescriptors "^2.0.3"
 
-utils-dom@^0.0.51:
-  version "0.0.51"
-  resolved "http://registry.npm.taobao.org/utils-dom/download/utils-dom-0.0.51.tgz#8a4bc8c887390dca5f9795f2d03739b42ece2b42"
-  integrity sha1-ikvIyIc5Dcpfl5Xy0Dc5tC7OK0I=
-
 uuid@^3.3.2:
   version "3.3.2"
   resolved "http://registry.npm.taobao.org/uuid/download/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"

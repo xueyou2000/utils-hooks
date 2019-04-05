@@ -1,13 +1,12 @@
 import React, { useEffect, useRef } from "react";
-import { listenClick, listenContextMenu, listenFocus, listenHover } from "utils-dom";
-
+import { listenClick, listenContextMenu, listenFocus, listenHover } from "./utils";
 export type TriggerAction = "hover" | "click" | "focus" | "contextMenu";
 
 const ActionMap = {
     hover: listenHover,
     click: listenClick,
     focus: listenFocus,
-    contextMenu: listenContextMenu
+    contextMenu: listenContextMenu,
 };
 
 export function useTrigger(ref: React.MutableRefObject<any>, action: TriggerAction[], cancel: TriggerAction[], cb: (act: TriggerAction, actived: boolean, event?: MouseEvent) => void, deps: any[] = []) {
@@ -58,7 +57,7 @@ export function useTrigger(ref: React.MutableRefObject<any>, action: TriggerActi
                 prevState.current = false;
                 cb(act, false, event);
             },
-            listenMap
+            listenMap,
         );
 
         return () => {

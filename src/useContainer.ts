@@ -6,9 +6,10 @@ export type GetContainer = GetDrawerContainerFuc | HTMLElement;
 /**
  * 获取容器
  * @param getContainer
+ * @param   className
  * @example const container = useContainer(() => some_container);
  */
-export function useContainer(getContainer?: GetContainer) {
+export function useContainer(className?: string, getContainer?: GetContainer) {
     const containerRef = useRef<HTMLElement>(null);
 
     // 在组件装卸时, 清除再body内创建的 container
@@ -25,6 +26,9 @@ export function useContainer(getContainer?: GetContainer) {
         // 未提供 container 则在Body下创建div作为容器
         if (!containerRef.current) {
             container = document.createElement("div");
+            if (className) {
+                container.classList.add(className);
+            }
             document.body.appendChild(container);
             containerRef.current = container;
         } else {
@@ -39,7 +43,7 @@ export function useContainer(getContainer?: GetContainer) {
     return container;
 }
 
-export function useContainerWithRef(containerRef: React.MutableRefObject<any>, getContainer?: GetContainer) {
+export function useContainerWithRef(containerRef: React.MutableRefObject<any>, className?: string, getContainer?: GetContainer) {
     // 在组件装卸时, 清除再body内创建的 container
     useEffect(() => {
         return () => {
@@ -54,6 +58,9 @@ export function useContainerWithRef(containerRef: React.MutableRefObject<any>, g
         // 未提供 container 则在Body下创建div作为容器
         if (!containerRef.current) {
             container = document.createElement("div");
+            if (className) {
+                container.classList.add(className);
+            }
             document.body.appendChild(container);
             containerRef.current = container;
         } else {

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { TriggerAction, useTrigger } from "./useTrigger";
-import { listenHover } from "utils-dom";
+import { listenHover } from "./utils";
 
 export interface TriggerChainConfig {
     trigger: TriggerAction[];
@@ -18,7 +18,7 @@ export function useTriggerChain(
     hideRef: React.MutableRefObject<HTMLElement>,
     cb: (act: TriggerAction, actived: boolean, event: MouseEvent) => void,
     config: TriggerChainConfig,
-    deps: any[] = []
+    deps: any[] = [],
 ) {
     const triggerActived = useRef(false);
     const hideActived = useRef(false);
@@ -46,7 +46,7 @@ export function useTriggerChain(
                 }
             }
         },
-        deps
+        deps,
     );
 
     useEffect(() => {

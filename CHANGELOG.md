@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.55 (Fri Apr 05 2019)
+
+-   移除外部`util-dom`依赖
+
 ## 0.0.54 (Wed Mar 27 2019)
 
 -   `useOutsideClick`再次修复

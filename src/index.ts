@@ -9,5 +9,5 @@ export * from "./Lifecycles/useUnmount";
 export * from "./Sensors/useObserverScroll";
 export * from "./State/useGlobalState";
 export * from "./useOutsideClick";
-export * from "./useTrigger";
-export * from "./useTriggerChain";
+export * from "./Trigger/useTrigger";
+export * from "./Trigger/useTriggerChain";

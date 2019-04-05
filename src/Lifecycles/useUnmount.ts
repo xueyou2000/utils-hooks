@@ -5,6 +5,6 @@ export const useUnmount = (unmount: React.EffectCallback) => {
         () => () => {
             if (unmount) unmount();
         },
-        []
+        [],
     );
 };

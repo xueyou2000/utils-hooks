@@ -1,6 +1,6 @@
 {
     "name": "utils-hooks",
-    "version": "0.0.54",
+    "version": "0.0.55",
     "description": "基于React的hooks",
     "typings": "es/index.d.ts",
     "main": "es/index.js",
@@ -54,7 +54,5 @@
         "tslib": "^1.9.3",
         "typescript": "^3.3.3"
     },
-    "dependencies": {
-        "utils-dom": "^0.0.51"
-    }
+    "dependencies": {}
 }
