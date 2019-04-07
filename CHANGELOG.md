@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.57 (Sun Apr 07 2019)
+
+-   修复`useUpdateEffect`的导出
+
 ## 0.0.56 (Sun Apr 07 2019)
 
 -   增加`useUpdateEffect`
