@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.56 (Sun Apr 07 2019)
+
+-   增加`useUpdateEffect`
+
 ## 0.0.55 (Fri Apr 05 2019)
 
 -   移除外部`util-dom`依赖
