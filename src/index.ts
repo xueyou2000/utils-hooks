@@ -12,3 +12,4 @@ export * from "./State/useGlobalState";
 export * from "./useOutsideClick";
 export * from "./Trigger/useTrigger";
 export * from "./Trigger/useTriggerChain";
+export * from "./SideEffects/useDebounce";

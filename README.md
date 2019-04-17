@@ -137,3 +137,36 @@ function app() {
     return <div ref={ref} />;
 }
 ```
+
+## useDebounce
+
+防抖函数
+
+```tsx
+function app() {
+    const [searchTerm, setSearchTerm] = useState("");
+    const debouncedSearchTerm = useDebounce(searchTerm, 500);
+    const [isSearching, setIsSearching] = useState(false);
+    const [results, setResults] = useState([]);
+
+    // Effect for API call
+    useEffect(() => {
+        if (debouncedSearchTerm) {
+            setIsSearching(true);
+            searchCharacters(debouncedSearchTerm).then((results) => {
+                setIsSearching(false);
+                setResults(results);
+            });
+        } else {
+            setResults([]);
+        }
+    }, [debouncedSearchTerm]); // Only call effect if debounced search term changes
+
+    return (
+        <div>
+            <input placeholder="Search Marvel Comics" onChange={(e) => setSearchTerm(e.target.value)} />
+            {isSearching && <div>Searching ...</div>}
+        </div>
+    );
+}
+```

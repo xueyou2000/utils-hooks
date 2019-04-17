@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.59 (Wed Apr 17 2019)
+
+-   增加`useDebounce`
+
 ## 0.0.58 (Wed Apr 17 2019 )
 
 -   修改`usePortal`函数签名, 增加`className`属性
