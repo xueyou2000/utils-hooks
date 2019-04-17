@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.60 (Wed Apr 17 2019)
+
+-   `useDebounceCallback`当延迟为 0 时候, 不进行`setTimeout`
+
 ## 0.0.59 (Wed Apr 17 2019)
 
 -   增加`useDebounce`

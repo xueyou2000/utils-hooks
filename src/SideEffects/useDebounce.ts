@@ -35,6 +35,10 @@ export function useDebounce(value: string, delay: number = 500) {
  */
 export function useDebounceCallback(fn: () => any, ms: number = 0, args: Array<any> = []) {
     useEffect(() => {
+        if (!ms) {
+            fn();
+            return;
+        }
         let handle = setTimeout(fn.bind(null, args), ms);
 
         return () => {
