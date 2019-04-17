@@ -26,3 +26,20 @@ export function useDebounce(value: string, delay: number = 500) {
 
     return debouncedValue;
 }
+
+/**
+ * 防抖函数
+ * @param   fn 回调函数
+ * @param   ms  延迟
+ * @param   args    依赖参数
+ */
+export function useDebounceCallback(fn: () => any, ms: number = 0, args: Array<any> = []) {
+    useEffect(() => {
+        let handle = setTimeout(fn.bind(null, args), ms);
+
+        return () => {
+            // if args change then clear timeout
+            clearTimeout(handle);
+        };
+    }, args);
+}
