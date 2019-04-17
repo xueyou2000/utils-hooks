@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.58 (Wed Apr 17 2019 )
+
+-   修改`usePortal`函数签名, 增加`className`属性
+
 ## 0.0.57 (Sun Apr 07 2019)
 
 -   修复`useUpdateEffect`的导出
