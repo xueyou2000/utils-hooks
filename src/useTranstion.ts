@@ -12,9 +12,11 @@ export const EXITING = "exiting";
  * @param initTranstion   是否初始动画, 默认false[可选]
  * @example const [ref, state] = useTranstion(visible);
  */
-export function useTranstion(visible: boolean, initTranstion: boolean = false, stopIinitTranstion: boolean = false): [React.MutableRefObject<undefined>, string] {
-    const [state, setState] = useState<string>(initTranstion ? UNMOUNTED : visible ? ENTERED : EXITED);
-    const init = useRef(false);
+export function useTranstion(visible: boolean, initTranstion: boolean = false): [React.MutableRefObject<undefined>, string] {
+    const [state, setState] = useState<string>(UNMOUNTED);
+    // visible ? ENTERED : EXITED
+    const firstFlag = useRef(true);
+    const firstVisible = useRef(visible);
     const ref = useRef();
 
     const handleTransitionEnter = useCallback((e: TransitionEvent) => {
@@ -37,15 +39,13 @@ export function useTranstion(visible: boolean, initTranstion: boolean = false, s
             return;
         }
 
-        /**
-         * 第一次立即设置完毕状态, 而不等待过度动画完毕, 因为这个时候没有过度
-         */
-        if (init.current === false && stopIinitTranstion === false) {
-            if (initTranstion) {
+        // 默认忽略第一次visible状态为false时的过度, 避免显示关闭过度动画
+        if (firstFlag.current) {
+            firstFlag.current = false;
+            if (!initTranstion && !firstVisible.current) {
                 visible ? setState(ENTERED) : setState(EXITED);
+                return;
             }
-            init.current = true;
-            return;
         }
 
         if (visible) {

@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.63 (Sun Apr 21 2019)
+
+-   再次修复`useTranstion`在初次动画问题
+
 ## 0.0.61 (Sun Apr 21 2019)
 
 -   修复`useTranstion`在初次动画问题

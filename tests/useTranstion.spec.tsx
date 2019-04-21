@@ -7,7 +7,7 @@ describe("useTranstion", () => {
     afterEach(cleanup);
 
     test("init state should be unmounted", () => {
-        const { result } = renderHook(() => useTranstion(false, true));
+        const { result } = renderHook(() => useTranstion(false));
         const [ref] = result.current;
         render(<div ref={ref} data-testid="transtion-div" />);
         const [_, state] = result.current;
@@ -18,11 +18,13 @@ describe("useTranstion", () => {
         const { result, rerender } = renderHook((visible: boolean) => useTranstion(visible), { initialProps: false });
         const { getByTestId } = render(<div ref={result.current[0]} data-testid="transtion-div" />);
 
+        expect(result.current[1]).toBe(UNMOUNTED);
+
         // Tips: 通过设为null, 来跳过useEffect里的初次缓存, 模拟真实场景下某些不需要初始动画
         rerender(null);
+
         rerender(true);
         expect(result.current[1]).toBe(ENTERING);
-
         // 模拟过度完毕事件
         fireEvent.transitionEnd(getByTestId("transtion-div"));
         expect(result.current[1]).toBe(ENTERED);
@@ -31,12 +33,13 @@ describe("useTranstion", () => {
     test("change state to be exited", () => {
         const { result, rerender } = renderHook((visible: boolean) => useTranstion(visible), { initialProps: true });
         const { getByTestId } = render(<div ref={result.current[0]} data-testid="transtion-div" />);
+        expect(result.current[1]).toBe(UNMOUNTED);
 
         // Tips: 通过设为null, 来跳过useEffect里的初次缓存, 模拟真实场景下某些不需要初始动画
         rerender(null);
+
         rerender(false);
         expect(result.current[1]).toBe(EXITING);
-
         // 模拟过度完毕事件
         fireEvent.transitionEnd(getByTestId("transtion-div"));
         expect(result.current[1]).toBe(EXITED);
