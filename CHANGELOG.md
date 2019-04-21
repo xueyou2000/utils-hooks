@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.61 (Sun Apr 21 2019)
+
+-   修复`useTranstion`在初次动画问题
+
 ## 0.0.60 (Wed Apr 17 2019)
 
 -   `useDebounceCallback`当延迟为 0 时候, 不进行`setTimeout`
