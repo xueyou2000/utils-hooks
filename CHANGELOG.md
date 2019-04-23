@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.64 (Tue Apr 23 2019)
+
+-   增加`useForceUpdate`强制更新 hooks
+
 ## 0.0.63 (Sun Apr 21 2019)
 
 -   再次修复`useTranstion`在初次动画问题

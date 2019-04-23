@@ -13,3 +13,4 @@ export * from "./useOutsideClick";
 export * from "./Trigger/useTrigger";
 export * from "./Trigger/useTriggerChain";
 export * from "./SideEffects/useDebounce";
+export * from "./SideEffects/useForceUpdate";
