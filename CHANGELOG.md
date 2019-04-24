@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.65 (Wed Apr 24 2019)
+
+-   修复`useForceUpdate`强制更新实现
+
 ## 0.0.64 (Tue Apr 23 2019)
 
 -   增加`useForceUpdate`强制更新 hooks

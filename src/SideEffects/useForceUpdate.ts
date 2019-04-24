@@ -1,3 +1,6 @@
 import { useState } from "react";
 
-export const useForceUpdate = () => useState()[1];
+export const useForceUpdate = () => {
+    const [, setIt] = useState(false);
+    return () => setIt((it) => !it);
+};
