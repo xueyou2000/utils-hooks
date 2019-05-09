@@ -6,7 +6,7 @@ import { useState } from "react";
  * @param key 值键
  * @param defaultKey    默认值键
  */
-function DefineDefaultValue(props: any, key: string = "value", defaultKey: string = "defaultValue") {
+export function DefineDefaultValue(props: any, key: string = "value", defaultKey: string = "defaultValue") {
     let defaultValue = null;
     if (key in props) {
         defaultValue = props[key];

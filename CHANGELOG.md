@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.66 (Thu May 09 2019)
+
+-   暴露 `DefineDefaultValue`
+
 ## 0.0.65 (Wed Apr 24 2019)
 
 -   修复`useForceUpdate`强制更新实现
