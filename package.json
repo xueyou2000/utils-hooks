@@ -1,6 +1,6 @@
 {
     "name": "utils-hooks",
-    "version": "0.0.66",
+    "version": "0.0.67",
     "description": "基于React的hooks",
     "typings": "es/index.d.ts",
     "main": "es/index.js",

@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.67 (Thu May 09 2019)
+
+-   增加 `useHover`
+
 ## 0.0.66 (Thu May 09 2019)
 
 -   暴露 `DefineDefaultValue`
