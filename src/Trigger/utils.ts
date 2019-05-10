@@ -4,6 +4,9 @@
  * @param cb
  */
 export function listenHover(element: HTMLElement, cb: (hovered: boolean, event: MouseEvent) => void) {
+    if (!element) {
+        return;
+    }
     const onMouseEnter = (event: MouseEvent) => {
         cb(true, event);
     };
@@ -27,6 +30,9 @@ export function listenHover(element: HTMLElement, cb: (hovered: boolean, event: 
  * @param cb
  */
 export function listenClick(element: HTMLElement, cb: (clicked: boolean, event: MouseEvent) => void, getPrevState?: () => boolean) {
+    if (!element) {
+        return;
+    }
     const onMouseClick = (event: MouseEvent) => {
         if (getPrevState) {
             cb(!getPrevState(), event);
@@ -46,6 +52,9 @@ export function listenClick(element: HTMLElement, cb: (clicked: boolean, event: 
  * @param cb
  */
 export function listenFocus(element: HTMLElement, cb: (hovered: boolean, event: MouseEvent) => void) {
+    if (!element) {
+        return;
+    }
     const onMouseFocus = (event: MouseEvent) => {
         cb(true, event);
     };
@@ -69,6 +78,9 @@ export function listenFocus(element: HTMLElement, cb: (hovered: boolean, event: 
  * @param cb
  */
 export function listenContextMenu(element: HTMLElement, cb: (clicked: boolean, event: MouseEvent) => void) {
+    if (!element) {
+        return;
+    }
     const onContextMenu = (event: MouseEvent) => {
         cb(true, event);
         event.preventDefault();

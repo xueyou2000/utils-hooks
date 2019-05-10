@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.68 (Fri May 10 2019)
+
+-   修复 `useTriggerChain`中某些 ref 暂时未未定义导致的空指针异常
+
 ## 0.0.67 (Thu May 09 2019)
 
 -   增加 `useHover`
