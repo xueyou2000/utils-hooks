@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.69 (Sat May 11 2019)
+
+-   `TriggerWrap`增加可选参数, `className`和`allowOther`
+
 ## 0.0.68 (Fri May 10 2019)
 
 -   修复 `useTriggerChain`中某些 ref 暂时未未定义导致的空指针异常
