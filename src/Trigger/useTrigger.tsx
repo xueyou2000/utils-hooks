@@ -81,7 +81,7 @@ export function TriggerWrap(element: React.ReactNode, ref: React.MutableRefObjec
 
     // node.type 是字符串, 则认为原生标签, 如果是构造函数, 则认定是自定义组件
     if (typeof node.type === "string" || allowOther) {
-        return React.cloneElement(node, { ref, className });
+        return React.cloneElement(node, Object.assign({}, node.props, { ref, className }));
     } else {
         return (
             <div ref={ref} className={className}>

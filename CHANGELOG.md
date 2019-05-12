@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.70 (Sun May 12 2019)
+
+-   修复`TriggerWrap`包裹元素时候漏掉了元素自身的 props
+
 ## 0.0.69 (Sat May 11 2019)
 
 -   `TriggerWrap`增加可选参数, `className`和`allowOther`
