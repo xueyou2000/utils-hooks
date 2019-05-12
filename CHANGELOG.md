@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.71 (Sun May 12 2019)
+
+-   修复`useTriggerChain`在没有`hover`触发选项的时候忽略
+
 ## 0.0.70 (Sun May 12 2019)
 
 -   修复`TriggerWrap`包裹元素时候漏掉了元素自身的 props

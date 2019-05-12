@@ -50,6 +50,9 @@ export function useTriggerChain(
     );
 
     useEffect(() => {
+        if (config.trigger.indexOf("hover") === -1) {
+            return;
+        }
         return listenHover(hideRef.current, (hovered, event) => {
             hideActived.current = hovered;
             if (!hovered) {
