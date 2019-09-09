@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.72 (Mon Sep 09 2019)
+
+-   `useControll`增加值转换器
+
 ## 0.0.71 (Sun May 12 2019)
 
 -   修复`useTriggerChain`在没有`hover`触发选项的时候忽略

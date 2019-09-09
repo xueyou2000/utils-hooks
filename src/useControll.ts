@@ -6,12 +6,12 @@ import { useState } from "react";
  * @param key 值键
  * @param defaultKey    默认值键
  */
-export function DefineDefaultValue(props: any, key: string = "value", defaultKey: string = "defaultValue") {
+export function DefineDefaultValue(props: any, key: string = "value", defaultKey: string = "defaultValue", convent?: (val: any) => void) {
     let defaultValue = null;
     if (key in props) {
-        defaultValue = props[key];
+        defaultValue = convent ? convent(props[key]) : props[key];
     } else if (defaultKey in props) {
-        defaultValue = props[defaultKey];
+        defaultValue = convent ? convent(props[defaultKey]) : props[defaultKey];
     }
     return defaultValue;
 }
@@ -22,8 +22,14 @@ export function DefineDefaultValue(props: any, key: string = "value", defaultKey
  * @param key 值键
  * @param defaultKey 默认值键
  */
-export function useControll<T>(props: any, key: string = "value", defaultKey: string = "defaultValue", defaultValue?: T): [T, React.Dispatch<React.SetStateAction<T>>, boolean] {
+export function useControll<T>(
+    props: any,
+    key: string = "value",
+    defaultKey: string = "defaultValue",
+    defaultValue?: T,
+    convent?: (val: T) => void,
+): [T, React.Dispatch<React.SetStateAction<T>>, boolean] {
     const isControll = key in props;
-    const [value, setValue] = useState<T>(DefineDefaultValue(props, key, defaultKey) || defaultValue);
+    const [value, setValue] = useState<T>(DefineDefaultValue(props, key, defaultKey, convent) || defaultValue);
     return [isControll ? props[key] : value, setValue, isControll];
 }
