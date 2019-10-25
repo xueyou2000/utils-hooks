@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.73 (Fri Oct 25 2019)
+
+-   增加`useFetch`, `useFetchWichRefresh`管理网络请求状态
+-   增加`useStore`全局状态管理
+
 ## 0.0.72 (Mon Sep 09 2019)
 
 -   `useControll`增加值转换器
