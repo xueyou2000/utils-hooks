@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.74 (Tue Nov 05 2019)
+
+-   修复`useFetchWichRefresh`刷新时加载状态未设置问题
+
 ## 0.0.73 (Fri Oct 25 2019)
 
 -   增加`useFetch`, `useFetchWichRefresh`管理网络请求状态

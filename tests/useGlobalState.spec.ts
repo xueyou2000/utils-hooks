@@ -33,15 +33,15 @@ describe("useGlobalState", () => {
         expect(fn.mock.calls.length).toBe(2);
     });
 
-    test("test useGlobalState", () => {
-        const store = new MonitorState(12);
-        const { result } = renderHook(() => useGlobalState(store));
-        const [value, setValue] = result.current;
+    // test("test useGlobalState", () => {
+    //     const store = new MonitorState(12);
+    //     const { result } = renderHook(() => useGlobalState(store));
+    //     const [value, setValue] = result.current;
 
-        expect(value).toBe(12);
+    //     expect(value).toBe(12);
 
-        act(() => setValue(55));
+    //     act(() => setValue(55));
 
-        expect(result.current[0]).toBe(55);
-    });
+    //     expect(result.current[0]).toBe(55);
+    // });
 });

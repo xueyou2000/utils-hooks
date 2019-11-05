@@ -50,6 +50,7 @@ export function useFetchWichRefresh<T>(doFetch: () => Promise<T>): [FetchState<T
     const [state, setState] = useState<FetchState<T>>({ loading: true, result: null, error: null });
 
     function refresh() {
+        setState({ loading: false, result: null, error: null });
         doFetch()
             .then((response) => {
                 setState({ loading: false, result: response, error: null });
