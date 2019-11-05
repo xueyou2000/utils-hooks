@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.75 (Tue Nov 05 2019)
+
+-   再次修复`useFetchWichRefresh`加载状态
+
 ## 0.0.74 (Tue Nov 05 2019)
 
 -   修复`useFetchWichRefresh`刷新时加载状态未设置问题
