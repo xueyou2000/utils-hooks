@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.77 (Fri Jan 10 2020)
+
+-   紧急修复`Store`导出
+
 ## 0.0.76 (Fri Jan 10 2020)
 
 -   增强`store`

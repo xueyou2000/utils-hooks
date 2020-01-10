@@ -2,7 +2,7 @@
  * 状态数据
  * @description 数据修改将触发订阅事件
  */
-export default class Store<T> {
+export class Store<T> {
     private _value: T;
 
     private _subscribes: Array<(value: T) => void>;
