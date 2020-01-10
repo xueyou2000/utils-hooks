@@ -1,4 +1,4 @@
-import { Store } from "../src";
+import Store from "../src/State/Store";
 
 describe("store", () => {
     test("init value", () => {

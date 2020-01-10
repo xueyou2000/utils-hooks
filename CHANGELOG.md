@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.76 (Fri Jan 10 2020)
+
+-   增强`store`
+
 ## 0.0.75 (Tue Nov 05 2019)
 
 -   再次修复`useFetchWichRefresh`加载状态

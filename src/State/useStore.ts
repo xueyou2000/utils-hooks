@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Store } from "./index";
+import Store from "./Store";
 
 /**
  * 数据管理hook
