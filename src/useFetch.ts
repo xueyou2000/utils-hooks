@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useMount } from "./Lifecycles/useMount";
 
 export interface FetchState<T = any> {
@@ -60,7 +60,7 @@ export function useFetchWichRefresh<T>(doFetch: () => Promise<T>): [FetchState<T
             });
     }
 
-    useMount(refresh);
+    useMount(() => refresh());
 
     return [state, refresh];
 }

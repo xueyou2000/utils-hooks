@@ -8,16 +8,12 @@ import { Store } from "./Store";
 export function useStore<T>(store: Store<T>): [T, (v: T) => void] {
     const [val, setVal] = useState(store.value);
 
-    const unsubscribe = store.subscribe((value) => {
-        setVal(value);
-    });
-
-    useEffect(
-        () => () => {
-            unsubscribe();
-        },
-        [],
-    );
+    useEffect(() => {
+        const unsubscribe = store.subscribe((value) => {
+            setVal(value);
+        });
+        return () => unsubscribe();
+    }, []);
 
     return [val, store.change];
 }
